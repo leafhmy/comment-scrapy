@@ -1,9 +1,11 @@
 import urllib.request
 import re
 import urllib.error
+#伪装浏览器
 headers=("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36")
 opener=urllib.request.build_opener()
 opener.addheaders=[headers]
+#添加全局
 urllib.request.install_opener(opener)
 comid="6396297703216100553"
 url="https://video.coral.qq.com/varticle/1409059210/comment/v2?callback=_varticle1409059210commentv2&orinum=10&oriorder=o&pageflag=1&cursor="+comid+"&scorecursor=0&orirepnum=2&reporder=o&reppageflag=1&source=132"
@@ -24,4 +26,5 @@ for i in range(0,6):
                 print(e.reason)
     except Exception as e:
         print(e)
+#异常处理
 
